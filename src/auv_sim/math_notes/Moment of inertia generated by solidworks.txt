@@ -1,0 +1,36 @@
+Mass properties of full auv part
+     Configuration: for sim
+     Coordinate system: Coordinate System2
+
+* Includes the mass properties of one or more hidden components/bodies.
+
+Density = 408200.000000 grams per cubic meter
+
+Mass = 36390.656688 grams
+
+Volume = 0.089149 cubic meters
+
+Surface area = 2116924.870549  square millimeters
+
+Center of mass: ( millimeters )
+	X = 0.000000
+	Y = 0.000000
+	Z = 0.000000
+
+Principal axes of inertia and principal moments of inertia: ( grams *  square millimeters )
+Taken at the center of mass.
+	 Ix = ( 1.000000,  0.000001,  0.000315)   	Px = 260076534.209381
+	 Iy = (-0.000315, -0.000081,  1.000000)   	Py = 14446656101.867426
+	 Iz = ( 0.000001, -1.000000, -0.000081)   	Pz = 14458271816.038759
+
+Moments of inertia: ( grams *  square millimeters )
+Taken at the center of mass and aligned with the output coordinate system.
+	Lxx = 260077937.502997	Lxy = 14891.876962	Lxz = 4461806.026280
+	Lyx = 14891.876962	Lyy = 14458271815.947290	Lyz = -930.768617
+	Lzx = 4461806.026280	Lzy = -930.768617	Lzz = 14446654698.665314
+
+Moments of inertia: ( grams *  square millimeters )
+Taken at the output coordinate system.
+	Ixx = 260077937.502997	Ixy = 14891.876962	Ixz = 4461806.026280
+	Iyx = 14891.876962	Iyy = 14458271815.947290	Iyz = -930.768617
+	Izx = 4461806.026280	Izy = -930.768617	Izz = 14446654698.665314

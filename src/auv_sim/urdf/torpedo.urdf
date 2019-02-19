@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<robot name="dd_robot">
+
+  <!-- Main Body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="4.5 4.5 0.5" rpy="0 0 0" />
+      <geometry>
+          <box size="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+</robot>

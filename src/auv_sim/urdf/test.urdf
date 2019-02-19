@@ -1,0 +1,204 @@
+<?xml version='1.0'?>
+<robot name="torpedo">
+
+  <!-- Main Body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+      	<mesh filename="package://auv/meshes/torpedo.dae"/>
+      </geometry>
+    </visual>
+		<!-- collision factor -->
+		<collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+      	<mesh filename="package://auv/meshes/torpedo.dae"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+	<material>Gazebo/Grey</material>
+	<pose>0 0 6 0 0 0</pose>
+  </gazebo>
+
+	<!-- Fin Group -->
+	<link name="fin_1">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+    	</geometry>
+    </visual>
+		<!-- collision factor -->
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+    	</geometry>
+    </collision>
+  	</link>
+	<gazebo reference="fin_1">
+	  <material>Gazebo/Blue</material>
+	</gazebo>
+
+	<joint name="vf_1" type="revolute">
+		<parent link="base_link"/>
+		<child link="fin_1"/>
+		<origin xyz="-6.0 0 0.82" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-0.7853982" upper="0.7853982" velocity="0.1"/>
+	</joint>
+
+	<link name="fin_2">
+		<visual>
+			<origin xyz="0 0 0" rpy="3.14 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+      </geometry>
+		<!-- collision factor -->
+		<collision>
+			<origin xyz="0 0 0" rpy="3.14 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+    	</geometry>
+    </collision>
+    </visual>
+  	</link>
+	<gazebo reference="fin_2">
+	  <material>Gazebo/Blue</material>
+	</gazebo>
+
+	<joint name="vf_2" type="revolute">
+		<parent link="base_link"/>
+		<child link="fin_2"/>
+		<origin xyz="-6.0 0 -0.82" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-0.7853982" upper="0.7853982" velocity="0.1"/>
+	</joint>
+
+	<link name="fin_3">
+		<visual>
+			<origin xyz="0 0 0" rpy="-1.570796 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+      </geometry>
+    </visual>
+		<!-- collision factor -->
+		<collision>
+			<origin xyz="0 0 0" rpy="-1.570796 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+    	</geometry>
+    </collision>
+  	</link>
+	<gazebo reference="fin_3">
+	  <material>Gazebo/Blue</material>
+	</gazebo>
+	<joint name="hf_1" type="revolute">
+		<parent link="base_link"/>
+		<child link="fin_3"/>
+		<origin xyz="-6.0 0.83 0" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1.0" lower="-0.7853982" upper="0.7853982" velocity="0.1"/>
+	</joint>
+
+	<link name="fin_4">
+		<visual>
+			<origin xyz="0 0 0" rpy="1.570796 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+      		</geometry>
+		</visual>
+		<!-- collision factor -->
+		<collision>
+			<origin xyz="0 0 0" rpy="1.570796 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/fin.dae"/>
+    		</geometry>
+    	</collision>
+  	</link>
+  	<gazebo reference="fin_3">
+		<material>Gazebo/Blue</material>
+  	</gazebo>
+	<joint name="hf_2" type="revolute">
+		<parent link="base_link"/>
+		<child link="fin_4"/>
+		<origin xyz="-6.0 -0.83 0" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+		<limit effort="1.0" lower="-0.7853982" upper="0.7853982" velocity="0.1"/>
+	</joint>
+
+	<!-- Thruster/tail Group -->
+	<link name="tail_1">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/tail.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<gazebo reference="tail_1">
+		<material>Gazebo/Red</material>
+	</gazebo>
+	<joint name="th_1" type="continuous">
+		<parent link="base_link"/>
+		<child link="tail_1"/>
+		<origin xyz="-3.885 0 0" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+	</joint>
+
+	<link name="tail_2">
+		<visual>
+			<origin xyz="0 0 0" rpy="1.570796 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/tail.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<gazebo reference="tail_2">
+		<material>Gazebo/Red</material>
+	</gazebo>
+	<joint name="th_2" type="continuous">
+		<parent link="base_link"/>
+		<child link="tail_2"/>
+		<origin xyz="-3.243 0 0" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+	</joint>
+
+	<link name="tail_3">
+		<visual>
+			<origin xyz="0 0 0" rpy="-1.570796 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/tail.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<gazebo reference="tail_3">
+		<material>Gazebo/Red</material>
+	</gazebo>
+	<joint name="th_3" type="continuous">
+		<parent link="base_link"/>
+		<child link="tail_3"/>
+		<origin xyz="3.777 0 0" rpy="0 0 0"/>
+		<axis xyz="0 1 0"/>
+	</joint>
+
+	<link name="tail_4">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="package://auv/meshes/tail.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<gazebo reference="tail_4">
+		<material>Gazebo/Red</material>
+	</gazebo>
+	<joint name="th_4" type="continuous">
+		<parent link="base_link"/>
+		<child link="tail_4"/>
+		<origin xyz="4.415 0 0" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+	</joint>
+</robot>

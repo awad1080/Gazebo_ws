@@ -1,0 +1,2 @@
+auv_sim:sim_plugins
+-DCATKIN_DEVEL_PREFIX=/home/awad1080/Desktop/Gazebo_ws/devel -DCMAKE_INSTALL_PREFIX=/home/awad1080/Desktop/Gazebo_ws/install -G Unix Makefiles

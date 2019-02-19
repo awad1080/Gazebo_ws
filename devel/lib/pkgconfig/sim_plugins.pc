@@ -1,0 +1,8 @@
+prefix=/home/awad1080/Desktop/Gazebo_ws/devel
+
+Name: sim_plugins
+Description: Description of sim_plugins
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/awad1080/Desktop/Gazebo_ws/devel/lib 
+Requires: roscpp gazebo_ros

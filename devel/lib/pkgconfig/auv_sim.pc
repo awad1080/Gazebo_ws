@@ -1,0 +1,8 @@
+prefix=/home/awad1080/Desktop/Gazebo_ws/devel
+
+Name: auv_sim
+Description: Description of auv_sim
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/awad1080/Desktop/Gazebo_ws/devel/lib 
+Requires: 
